@@ -1,0 +1,306 @@
+body{
+    margin: 0;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding:0 20px; 
+    /*los 20 pixeles para
+     que,si se hace muy pequeña la página, 
+     no toque los bordes de la página y se 
+     vea más profesional*/
+     text-align: justify;
+     padding-bottom: 4em;
+     font-size: 1.25rem; /*Aquí le probé como recomendó el profe. 3 rem era demasiado, 2 igual, 1 muy pequeño
+     y 1.25 de maravilla. LO MÁS CHINGÓN DE TODO ES QUE SI HAGO MÁS PEQUEÑA LA VENTANA, NO TENGO QUE HACER "scroll" 
+     en la página (mover la barrita de la página de un lugar a otro). ESTAMOS APRENDIENDO DISEÑO RESPONSIVO*/
+}
+
+.contenedor_tablas{
+    display:flex;
+    max-width: 850px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+h1 {
+    font-family: 'Lora', serif;
+    font-weight: 400; /* Para agregar NEGRITAS*/
+    color: #143774;
+    font-size: 2rem; /*Dice el pro que 2rem, son 32 pix*/
+    margin: 0; /*Este sirve para que no haya demasiado espacio
+    entre h1 y el subtítulo*/
+}
+
+header {
+    text-align: center; 
+    background: #f8f8f8;
+    padding: 2em 0;
+}
+
+nav{
+    max-width: 1000px;
+    margin:auto;
+    font-size: 20px;
+    margin-top: 20px;
+    
+}
+
+.menu-horizontal{
+    list-style:none;
+    display:flex;
+    justify-content: space-around;
+}
+
+.menu-horizontal >li > a{
+    display:block;
+    padding:15px 20px;
+    color:#143774; /*Este es el color de las letras del navegador. Donde está "Tienda", "Docencia", etc.*/
+    text-decoration: none;
+}
+
+.menu-horizontal > li:hover{ /*Si le pongo :focus no sale nada. No cambia nada*/
+    background-color: red;
+}
+
+.menu-vertical{
+    position:absolute;
+    display:none;
+    list-style:none;
+    width: 200px;
+    background-color: #707070;
+}
+
+.menu-horizontal li:hover .menu-vertical{
+    display:block;
+}
+
+.menu-vertical li a{
+    display:block;
+    color:white;/*Es para cambiar el color de el menu vertical, el que se "desprende" cuando pasa el cursor*/   
+    text-decoration: none; /*Es para quitar el subrayado a los enlaces. Solo aquí funciona. En las "otros" menu-vertical no acata el comando. Talvez porque aqui está el a de anchor*/
+}
+
+.column {
+    display: flex;
+    /*Este comando es para las columnas como el mismo nombre del comando lo expresa*/
+}
+
+.hero{  /*"hero" solo es para que sea hijo directo de "column" y se formen las columnas sin ningún problema*/
+    padding: 0 1em;
+}
+
+.about {
+    /*Estos comandos los utilizo para dar estilización sobre todo a títulos con un fondo color turquesa*/
+    text-align: center;
+    background: #00FFFF;
+    /*padding: 20px 50px;*/
+    padding: 0.8em 1.25em; /*17 de junio de 2022 --> Estoy haciendo lo posible por seguir las directrices del profesor. 
+    Para un diseño responsivo, por lo general, recomienda que para "padding" y "margin" utilicemos em. ES POR ESO QUE SE VE COMENTADO el "padding" con los pixeles. Lo comento, veo como afecta y acto seguido, busco reemplazarlo con las unidades que recomienda el profe. De tal manera que sea vea igual, pero con las unidades recomendadas para un diseño responsivo*/
+    font-size: 2rem;
+    border-bottom: 5px solid #263627;
+    margin: 0; /*margin 0. Porque de lo contrario
+    se baja el título en la página
+    principal*/
+
+}
+
+img{
+    width: 100%;
+}
+
+#el{ /* Es para hacer más pequeña la foto de presentación (donde salgo con el puño en el mentón)*/
+    width: 70%;
+}
+
+.hola {
+    /*"hola", sobretodo da el color de fondo azul claro en DOCENCIA*/
+    margin: 0;
+    background: #3669C9;
+    color:#fff;
+       
+}
+
+.bolder {
+    font: bolder;
+    color:#707070;
+}
+
+.YT-red {
+    color:red;
+}
+
+.btnCenter {
+    text-align: center; /*Estuve peleandome una hora para poner el boton en medio de la página. la solución: poner un div encerrando el código del botón y con este bendito comando lo centras */
+ }
+
+button {
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*Las dos comandos anteriores
+    son para crear más espacio del 
+    botón y así centrar el texto
+    START GAME*/
+    font-weight: bold;
+    width: 15%;
+    /*El comando width (ancho) es para el 
+    botón solamente, no para el texto.*/
+    color: white;
+    border-radius: 5px;
+    background: red;
+    /*
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    */
+    cursor: pointer;
+  }
+
+  button:hover{
+    background-color: #00FA9A; /*Este comando es para que, cuando el cursor pase por encima del botón (ME FALTA LA HIPOTENUSA), se cambia el color de fondo del botón*/
+    color: black;
+    
+  }
+
+/*EMPIEZA CARRUSEL*/
+.carousel {
+    max-width: 600px;
+    position: relative;/*Es para acomodar las flechitas*/
+    margin: 0 auto;
+}
+
+.carousel .carousel-item,
+.carousel .carousel-item-hidden {
+    display: none; /*Este es para que no se vean las imágenes que están dentro
+    de este div*/
+}
+
+.carousel .carousel-item-visible {
+    display: block; /*El guason que esta dentro de este div. Si no le 
+    pusieramos ese comando, solo se ven las flechas */
+    animation: fadeVisibility 0.5s; /* Son las animaciones, cuando se cambia
+de imagen*/
+}
+
+.carousel .carousel-item img {
+    width: 100%;
+    max-width: 600px; /*Para que la imagen no se "alargue" demás cuando el 
+    usuario haga la página más grande o pequeña*/
+    height: auto;
+}
+
+.carousel .carousel-actions {/*En esta clase se encuentran las flechas del
+carrusel*/
+    display: flex;
+    width: 100%;
+    justify-content: space-between;/*Con este, las flechas se separan, 
+    de lo contrario, siempre estarían juntas */
+    position: absolute;/*Con este, las flechas se suben, de lo contrario
+    NO  estarian en la imagen.*/
+    top: 50%;/*Lo mismo que el anterior*/
+    transform: translateY(-50%);/*Este comando es para que 
+    las flechitas esten justo en medio, con respecto al eje
+    vertical, obviamente. Nota importante: lo que pasa si 
+    quitamos el signo negativo, no FUNCIONA como esperariamos */
+   
+}
+
+.carousel .carousel-actions button {
+    border-radius: 50px;
+    background-color: white;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color:#1A1E26;
+}
+
+.carousel .carousel-actions button#carousel-button-prev {
+    margin-left: 20px;
+}
+
+.carousel .carousel-actions button#carousel-button-next {
+    margin-right: 20px;   
+}
+
+@keyframes fadeVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*TERMINA CARRUSEL*/
+
+@media (max-width: 960px) { /*Por el momento no veo mucho cambio, porque mi texto está dispuesto en forma de columna*/
+    .container
+    .column{
+        display: flex;
+        flex-direction: column;
+    }
+
+   #el{
+    margin: 0 auto;
+    padding-bottom: 1em;
+   }
+}
+
+table,th,td{
+    border: 3px solid #263627; /*Para que haya divisiones entre las columnas y renglones*/
+    width: 15%;
+    border-collapse: collapse; /*Es para que no se vean con espacios las divisiones*/
+    text-align: center;
+    margin-top: 10px;
+}
+
+.links{
+    background: red;
+    text-decoration: none;
+    display: inline-block;
+    font-weight:bold;
+    color:black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 23px;
+    padding-right: 23px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.links:hover{
+    background-color: #09ec15; /*Este comando es para que, cuando el cursor pase por encima del botón (ME FALTA LA HIPOTENUSA), se cambia el color de fondo del botón*/
+    color: black;
+}
+
+@media (max-width: 675px) {/*LOS @media SON LOS QUE HACEN LA MAGIA*/
+    .menu-horizontal {
+        flex-direction: column;/*Cuando el profe nos pidío que lo intentaramos, SI puse esta línea de código*/
+    }
+}
+
+@media (max-width: 675px) {/*LOS @media SON LOS QUE HACEN LA MAGIA. NO SÉ PORQUE EL PROFESOR PUSO ESTOS HASTA AQUÍ. AHORITA VOY A HACER LA PRUEBA A VER SI FUNCIONAN TODOS JUNTOS*/
+    nav ul {
+        flex-direction: column; /*ESTA LÍNEA LO QUE HACE ES "APILAR" LOS ENLACES. Sin esta línea estarían todos en una solo línea y se vería horrible*/
+    }
+    
+    nav li {
+        margin: .5em 0; /*Esta línea lo que hace es dar espacio hacia arriba y abajo en los enlaces*/
+    }
+}
+
+
+/*
+Lo que estoy entendiendo es: Teniendo presente que em es con respecto a su pariente SUPERIOR, si pones 1em tendrá el mismo font-size que su pariente superior. 
+Por ejemplo: Si el pariente superior tiene un font-size de 20px y pones 1em en el pariente inferior, entonces el font-size del pariente inferior será 20px. 
+Otro ejemplo: El pariente SUPERIOR tiene un font-size de 30px y pones 2em en el HIJO (pariente inferior), el HIJO tendrá un font-size de 2em equivalente a 60px. 
+
+*/

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="{{url_for('static',filename='css/formulario.css')}}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>    
+</head>
+
+<body>
+
+    <header>
+        <h1>JOSÉ MICHELL PÉREZ RODRÍGUEZ</h1>
+        <img src="" alt="">
+            <nav>
+                <ul class="menu-horizontal">
+                    <li><a target=”_blank” class="bolder" href="https://jmichellpr.xyz/index2.html">Inicio</a></li>
+                    <li><a target=”_blank” class="bolder" href="https://jmichellpr.xyz/docencia2.html">Docencia</a></li>
+                    <li><a  target=”_blank” class="bolder" href="../CALCULADORA/CalcTrect.html">Calculadora</a></li>
+                    <li><a  target=”_blank” class="bolder" href="../BLACKJACK/blackjack.html">Juegos</a></li>
+                    <li><a  target=”_blank” class="bolder" href="http://jmichellpr.xyz/qpumps.html">Q-Pumps</a></li>
+                    <li>
+                    <a  target=”_blank” class="bolder" href="#">Mi Tienda</a>
+                    <ul class="menu-vertical">
+                        <li><a href="Mi_Tienda_clases.html">Clases</a></li>
+                        <li><a href="#">Posters</a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+
+    <div class="container">
+        <form action="/templates/formulario/guardar" method="post"> <!--El método POST es imprescindible para conectar con el documento Python y por consiguiente con la base de datos|Con action="registrar.php" me ahorro lo que está comentado más abajo-->
+        <br>
+            
+                    <input placeholder="Nombre" type="text" name="name">
+                    <br>
+                    <br>
+                
+                    <input placeholder="Apellido" type="text" name="apellido">
+                    <br>
+                    <br>
+                
+                    <input placeholder="e-mail" type="email" name="email">
+                    <br>
+                    <br>
+                  
+                    <input placeholder="teléfono" type="tel" name="telefono">
+                    <!--El profe ha dejado en blanco, lo mismo que yo-->
+                    <!--Según el profe, name y id es para cuando recolectamos datos-->
+                   
+                <!--Ahora voy a poner un botón para la busqueda-->            
+                <br>
+                <br>
+                <br>
+                <div class="btnCenter">
+                    <button  type="submit" name="register">Enviar</button><!--Así como es importante el método POST, lo mismo sucede con el type="submit" -->
+                </div>
+        </form>
+    </div>
+
+
+</body>
+</html>
